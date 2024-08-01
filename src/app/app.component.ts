@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TareasService } from './Services/PEAR.TareasService.Services';
+import { TareasService } from './Services/Tareas.Services';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +13,8 @@ export class AppComponent {
     private tareasService: TareasService
   ) {}
 
-  agregarTarea(titulo: string, descripcion: string) {
-    this.tareasService.agregarTarea(titulo, descripcion);
+  agregarTarea(titulo: string, descripcion: string, fecha: string, hora: string) {
+    this.tareasService.agregarTarea(titulo, descripcion, fecha, hora);
     }
     
     obtenerTareas() {

@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { TodolistComponent } from './Components/Todolist/PEAR-Todolist.component';
-import { MenuAgregarComponent } from './Components/MenuAgregar/PEAR-MenuAgregar.component';
-import { ListaComponent } from './Components/Lista/PEAR-List.component';
+import { TodolistComponent } from './Components/Todolist/To_Do_List.component';
+import { MenuAgregarComponent } from './Components/MenuAgregar/MenuAgregar.component';
+import { ListaComponent } from './Components/Lista/Lista.component';
 import { EditarComponent } from './Components/Editar/editar.component';
 
 @NgModule({

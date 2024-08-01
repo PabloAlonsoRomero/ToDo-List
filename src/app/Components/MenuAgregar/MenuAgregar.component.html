@@ -1,0 +1,16 @@
+<form #taskForm="ngForm" (ngSubmit)="agregarTarea()" novalidate>
+    <div class="flex mt-4"> <!-- Titulo -->
+        <input class=" w-full" name="Titulo" type="text" placeholder="Titulo" [(ngModel)]="titulo" required>
+    </div>
+    <div> <!-- Descripción -->
+        <input class="mt-3 w-full" name="Descripcion" type="text" placeholder="Descripción" [(ngModel)]="descripcion">
+    </div>
+    <div class="flex mt-3">
+        <input class="w-1/2" name="Fecha" type="date" [(ngModel)]="fecha" required>
+        <input class="ms-1 w-1/2" name="Hora" type="time" [(ngModel)]="hora" required>
+    </div>
+    <div class="grid justify-items-center"> <!-- Botón de agregar tarea -->
+        <button type="submit" [disabled]="!taskForm.form.valid"
+        class="bg-teal-700 hover:bg-teal-900 transition-all text-white rounded-lg py-3 px-2 mt-4 mb-4">Agregar tarea</button>
+    </div>
+</form>

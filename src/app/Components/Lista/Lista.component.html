@@ -1,12 +1,16 @@
 <ul class="list-disc">
     <li *ngFor="let tarea of tareas; let i = index" class="text-gray-900 bg-yellow-100 rounded-2xl shadow-sm p-2 w-auto h-auto overflow-hidden mb-1">
         <div class="flex justify-between">
-            <h3 class="text-lg font-medium">{{ tarea.titulo }}</h3>
+            <h3 class="text-lg font-medium">Titulo: {{ tarea.titulo }}</h3>
             <div class="flex">
-                <img class="w-5 h-5 m-1 hover:scale-110 transition duration-500 ease-in-out" src="./assets/img/editar.png" alt="editarimagen" (click)="editarImagen()">
+                <img class="w-5 h-5 m-1 hover:scale-110 transition duration-500 ease-in-out" src="./assets/img/editar.png" alt="editarimagen" (click)="editarTarea(i)">
                 <img class="w-5 h-5 m-1 hover:scale-110 transition duration-500 ease-in-out" src="./assets/img/basura.png" alt="" (click)="eliminarTarea(i)">
             </div>
         </div>
         <p class="text-base"> {{ tarea.descripcion }}</p>
+        <p class="text-base"> {{ tarea.fecha }} </p>
+        <p class="text-base"> {{ tarea.hora }} </p>
     </li>
 </ul>
+
+<editar *ngIf="tareaEditar" [tarea]="tareaEditar" (cerrar)="cerrarEditor()"></editar>

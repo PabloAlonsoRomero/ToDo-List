@@ -1,16 +1,15 @@
 import { Component } from "@angular/core";
-import { ITarea } from "src/app/Interfaces/PEAR-Todolist.interface";
-import { TareasService } from "src/app/Services/PEAR.TareasService.Services";
+import { ITarea } from "src/app/Interfaces/To_Do_List.interface";
+import { TareasService } from "src/app/Services/Tareas.Services";
 
 @Component({
     selector: 'lista',
-    templateUrl: 'PEAR-Lista.component.html'
+    templateUrl: 'Lista.component.html'
 })
 
 export class ListaComponent{
     tareas = this.tareasService.obtenerTareas()
     tareaEditar: ITarea | null = null
-    editarimagenvar = true;
 
     constructor(
         private tareasService: TareasService
@@ -20,7 +19,11 @@ export class ListaComponent{
         this.tareas.splice(indice,1)
     }
 
-    editarImagen(){
-        this.editarimagenvar = false
+    editarTarea(indice: number){
+        this.tareaEditar = this.tareas[indice];
+    }
+
+    cerrarEditor() {
+        this.tareaEditar = null;
     }
 }
